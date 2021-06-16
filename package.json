@@ -1,0 +1,20 @@
+{
+  "name": "livreor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env SERVER_PORT=8080 PGUSER=LivreOr PGHOST=localhost PGPASSWORD=LivreOr PGDATABASE=LivreOr PGPORT=5432 NODE_ENV=local nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "moment": "^2.29.1",
+    "pg": "^8.6.0"
+  }
+}

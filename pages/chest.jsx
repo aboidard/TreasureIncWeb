@@ -1,10 +1,10 @@
-import ChestHome from '../app/components/Chest'
+import Chest from '../app/components/Chest'
 import Container from '../app/components/Container'
 
-export default function Chest({ items }) {
+export default function ChestPage({ items }) {
   return (
     <Container>
-      <ChestHome items={items} />
+      <Chest items={items} />
     </Container>
   )
 }

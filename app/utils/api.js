@@ -16,8 +16,12 @@ export class ApiNotFoundError extends ApiError {
  * @param {object} option 
  */
 export async function apiFetch(endpoint, options = {}) {
+    const { limit, page } = options
     if (!endpoint.startsWith("/")) endpoint = "/" + endpoint
-    const response = await fetch('http://localhost:8081' + endpoint, {
+    let url = new URL('http://localhost:8081' + endpoint)
+    let params = { limit: limit, page: page }
+    url.search = new URLSearchParams(params).toString();
+    const response = await fetch(url, {
         credentials: 'include',
         headers: {
             accept: 'application/json',

@@ -30,7 +30,6 @@ function Container({ children, className = "" }) {
                     {children}
                 </div>
             </main>
-            {/* <footer>the footer</footer> */}
         </div>
     )
 }

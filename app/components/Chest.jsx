@@ -6,18 +6,18 @@ import SearchUser from "./SearchUser"
 
 function Chest(props) {
 
-    const { items, loading, fetchItems } = useItems()
+    const { items, loading, limitReach, fetchItems } = useItems()
     const [page, setPage] = useState(0)
     const [changePage, setChangePage] = useState(true)
     const itemsList = []
 
-    const handleScroll = function (e) {
+    const handleScroll = useCallback((e) => {
         const bottom = document.documentElement.scrollHeight - document.documentElement.scrollTop === document.documentElement.clientHeight;
 
         if (bottom && !loading) {
             setChangePage(true)
         }
-    }
+    }, [loading, limitReach])
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll, false);
@@ -30,9 +30,6 @@ function Chest(props) {
         setChangePage(false)
     }, [changePage])
 
-
-
-
     for (const [index, value] of items.entries()) {
         itemsList.push(<Item key={index} itemInfo={value} />)
     }
@@ -44,6 +41,7 @@ function Chest(props) {
             </p>
             <SearchUser />
             {page} {loading && "loading"}
+            limit : {limitReach && "true"}
             <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm: gap-4 justify-center">
                 {itemsList}
             </div>

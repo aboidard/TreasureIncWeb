@@ -3,6 +3,7 @@ import { apiFetch } from '../utils/api'
 
 const initialState = {
     loading: false,
+    limitReach: false,
     items: [],
 };
 
@@ -14,7 +15,9 @@ function reducer(state, action) {
         case 'FETCHING_ITEMS':
             return { ...state, loading: true }
         case 'SET_ITEMS':
-            return { ...state, items: [...state.items, action.payload], loading: false }
+            return { ...state, items: [...state.items, ...action.payload], loading: false }
+        case 'LIMIT_REACH':
+            return { ...state, limitReach: true, loading: false }
         default:
             throw new Error(`Action inconnue ${action.type}`)
     }
@@ -31,14 +34,17 @@ export function useItems() {
     return {
         items: state.items,
         loading: state.loading,
+        limitReach: state.limitReach,
         fetchItems: async (userId, limit = 10, page = 0) => {
-            dispatch({ type: 'FETCHING_ITEMS' })
-            const itemsResponse = await apiFetch(`/user/${userId}/items`, {
-                method: 'GET',
-                limit: limit,
-                page: page,
-            })
-            dispatch({ type: 'SET_ITEMS', payload: itemsResponse })
+            if (!state.limitReach) {
+                dispatch({ type: 'FETCHING_ITEMS' })
+                const itemsResponse = await apiFetch(`/user/${userId}/items`, {
+                    method: 'GET',
+                    limit: limit,
+                    page: page,
+                })
+                itemsResponse == null ? dispatch({ type: 'LIMIT_REACH' }) : dispatch({ type: 'SET_ITEMS', payload: itemsResponse })
+            }
         }
     }
 }

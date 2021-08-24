@@ -41,7 +41,6 @@ function Chest(props) {
             </p>
             <SearchUser />
             {page} {loading && "loading"}
-            limit : {limitReach && "true"}
             <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm: gap-4 justify-center">
                 {itemsList}
             </div>

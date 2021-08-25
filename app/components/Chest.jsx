@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useRef } from "react"
 import { useItems } from "../hooks/items"
 import Item from "./Item"
 import { Loader } from "./Loader"
@@ -8,24 +8,25 @@ import { scrollToTop } from "../utils/window"
 function Chest(props) {
 
     const { items, loading, limitReach, fetchItems } = useItems()
+    const limitReachRef = useRef(limitReach)
+    const loadingRef = useRef(loading)
     const [page, setPage] = useState(0)
     const [buttonTopVisible, setButtonTopVisible] = useState(false)
-    const [changePage, setChangePage] = useState(true)
     const itemsList = []
 
-    const handleScroll = useCallback((e) => {
+
+    const handleScroll = (e) => {
         let scrollTop = document.documentElement.scrollTop
         const bottom = document.documentElement.scrollHeight - scrollTop === document.documentElement.clientHeight;
 
         // appel à la page suivante de l'api une fois arrivé en bas de l'écran
-        if (bottom && !loading) {
-            setChangePage(true)
+        if (bottom && !loadingRef.current && !limitReachRef.current) {
+            setPage(prevPage => prevPage + 1)
         }
 
         // on affiche le bouton pour revenir en haut de l'écran apres un scroll de 300
         setButtonTopVisible(scrollTop > 300)
-
-    }, [loading])
+    }
 
     useEffect(() => {
         //evenement de scroll pour le chargement infini + le bouton de retour au début de la page
@@ -33,12 +34,15 @@ function Chest(props) {
     }, [])
 
     useEffect(() => {
-        if (!changePage) return
         if (limitReach) return
         fetchItems("12345678900", 12, page)
-        setPage(prevState => prevState + 1)
-        setChangePage(false)
-    }, [changePage, limitReach])
+    }, [page])
+
+    //msie à jour des refs pour les états limitReach et loading 
+    useEffect(() => {
+        limitReachRef.current = limitReach
+        loadingRef.current = loading
+    }, [limitReach, loading])
 
     for (const [index, value] of items.entries()) {
         itemsList.push(<Item key={index} itemInfo={value} />)

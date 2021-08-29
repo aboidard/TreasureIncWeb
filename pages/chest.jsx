@@ -1,24 +1,23 @@
 import Chest from '../app/components/Chest'
 import Container from '../app/components/Container'
 
-export default function ChestPage({ items }) {
+export default function ChestPage({ infos }) {
   return (
     <Container>
-      <Chest items={items} />
+      <Chest />
+      <div className="text-center"> server version : {infos.version}</div>
     </Container>
   )
 }
 
-// export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
 
-//   const res = await fetch('http://localhost:8081/user/12345678900/items')
-//   const items = await res.json()
-//   console.log(`les items : ${JSON.stringify(items)}`)
-//   console.log(`item 0 : ${items[0].name}`)
+  const res = await fetch('http://localhost:8081/version')
+  const infos = await res.json()
 
-//   return {
-//     props: {
-//       items,
-//     },
-//   }
-// }
+  return {
+    props: {
+      infos,
+    },
+  }
+}

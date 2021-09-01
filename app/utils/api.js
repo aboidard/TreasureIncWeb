@@ -10,6 +10,7 @@ export class ApiNotFoundError extends ApiError {
 
 }
 
+
 /**
  * 
  * @param {string} endpoint 
@@ -18,7 +19,7 @@ export class ApiNotFoundError extends ApiError {
 export async function apiFetch(endpoint, options = {}) {
     const { limit, page } = options
     if (!endpoint.startsWith("/")) endpoint = "/" + endpoint
-    let url = new URL('http://localhost:8081' + endpoint)
+    let url = new URL(process.env.NEXT_PUBLIC_CHEST_HOST_URL + endpoint)
     let params = { limit: limit, page: page }
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url, {

@@ -12,7 +12,7 @@ export default function ChestPage({ infos }) {
 
 export async function getStaticProps(context) {
 
-  const res = await fetch('http://localhost:8081/version')
+  const res = await fetch(`${process.env.NEXT_PUBLIC_CHEST_HOST_URL}/${process.env.NEXT_PUBLIC_CHEST_ENDPOINT_INFOS}`)
   const infos = await res.json()
 
   return {

@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { apiFetch } from '../utils/api'
+import { format } from "../utils/string";
 
 const FETCHING_ITEMS = "FETCHING_ITEMS"
 const SET_ITEMS = "SET_ITEMS"
@@ -48,7 +49,6 @@ export function useItems() {
         loading: state.loading,
         limitReach: state.limitReach,
         fetchItems: async ({ limit, id }) => {
-            console.log(`fetch hook limit: ${limit} | id : ${id} | state.id: ${state.id}`)
             let idToFetch
             if (id === undefined) id = state.id
             if (id != state.id) {
@@ -61,7 +61,7 @@ export function useItems() {
 
             if (!state.limitReach && idToFetch != "") {
                 dispatch({ type: FETCHING_ITEMS })
-                const itemsResponse = await apiFetch(`/user/${idToFetch}/items`, {
+                const itemsResponse = await apiFetch(format(process.env.NEXT_PUBLIC_CHEST_ENDPOINT_ITEMS, idToFetch), {
                     method: 'GET',
                     limit: limit,
                     page: state.page,

@@ -1,5 +1,6 @@
 .pixelImage {
-    image-rendering: crisp-edges
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
 }
 
 .tooltip {

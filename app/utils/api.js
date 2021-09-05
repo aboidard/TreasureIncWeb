@@ -23,12 +23,13 @@ export async function apiFetch(endpoint, options = {}) {
     let params = { limit: limit, page: page }
     url.search = new URLSearchParams(params).toString();
     const response = await fetch(url, {
-        credentials: 'include',
+        credentials: 'omit',
         headers: {
             accept: 'application/json',
         },
         ...options
     })
+
     if (response.status === 204) {
         return null
     }

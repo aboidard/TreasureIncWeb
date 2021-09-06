@@ -6,9 +6,6 @@ function Chest() {
     const [idUser, setIdUser] = useState("")
     return (
         <>
-            <p className="text-center">
-                Welcome to Treasure INC - chest !
-            </p>
             <SearchUser setIdUser={setIdUser} />
             {idUser && <ItemsList idUser={idUser} />}
         </>)

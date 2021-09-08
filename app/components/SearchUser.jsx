@@ -9,7 +9,7 @@ export default function SearchUser({ setIdUser }) {
     );
 
     return (
-        <div className='has-tooltip'>
+        <div className='has-tooltip mx-auto'>
             <div className="relative mb-4 text-gray-600 focus-within:text-gray-400 space-x-4">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                     <button className="p-4 focus:outline-none focus:shadow-outline">

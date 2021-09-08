@@ -1,12 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useEmblaCarousel } from 'embla-carousel/react'
-import { PrevButton, NextButton } from './CarouselButton'
-
-// import screenShot1 from '../../public/screenshots/treasure_inc_screen_1.png'
-// import screenShot2 from '../../public/screenshots/treasure_inc_screen_2.png'
-// import screenShot3 from '../../public/screenshots/treasure_inc_screen_3.png'
-// import screenShot4 from '../../public/screenshots/treasure_inc_screen_4.png'
+import { PrevButton, NextButton } from '@/components/CarouselButton'
 
 const Carousel = ({ slides }) => {
     const [viewportRef, embla] = useEmblaCarousel({
@@ -45,42 +40,6 @@ const Carousel = ({ slides }) => {
                             </div>
                         </div>
                     ))}
-                    {/* <div className="embla__slide" key={1}>
-                        <div className="embla__slide__inner">
-                            <Image
-                                className="embla__slide__img"
-                                src={screenShot1}
-                                alt={"Screen" + 1}
-                            />
-                        </div>
-                    </div>
-                    <div className="embla__slide" key={2}>
-                        <div className="embla__slide__inner">
-                            <Image
-                                className="embla__slide__img"
-                                src={screenShot2}
-                                alt={"Screen" + 2}
-                            />
-                        </div>
-                    </div>
-                    <div className="embla__slide" key={3}>
-                        <div className="embla__slide__inner">
-                            <Image
-                                className="embla__slide__img"
-                                src={screenShot3}
-                                alt={"Screen" + 3}
-                            />
-                        </div>
-                    </div>
-                    <div className="embla__slide" key={4}>
-                        <div className="embla__slide__inner">
-                            <Image
-                                className="embla__slide__img"
-                                src={screenShot4}
-                                alt={"Screen" + 4}
-                            />
-                        </div>
-                    </div> */}
                 </div>
             </div>
             <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />

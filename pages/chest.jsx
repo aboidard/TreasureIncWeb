@@ -1,5 +1,5 @@
-import Chest from '../app/components/Chest'
-import Container from '../app/components/Container'
+import Chest from '@/app/components/Chest'
+import Container from '@/components/Container'
 
 export default function ChestPage({ infos }) {
   return (

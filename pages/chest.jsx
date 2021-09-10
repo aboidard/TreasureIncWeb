@@ -1,9 +1,12 @@
-import Chest from '../app/components/Chest'
-import Container from '../app/components/Container'
+import Chest from '@/app/components/Chest'
+import Container from '@/components/Container'
 
 export default function ChestPage({ infos }) {
   return (
-    <Container>
+    <Container title="Chest">
+      <p className="text-center">
+        Welcome to Treasure INC - chest !
+      </p>
       <Chest />
       <div className="text-center"> server version : {infos.version}</div>
     </Container>

@@ -1,6 +1,6 @@
 import { useReducer } from "react";
-import { apiFetch } from '../utils/api'
-import { format } from "../utils/string";
+import { apiFetch } from '@/utils/api'
+import { format } from "@/utils/string";
 
 const FETCHING_ITEMS = "FETCHING_ITEMS"
 const SET_ITEMS = "SET_ITEMS"

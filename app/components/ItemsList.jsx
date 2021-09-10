@@ -1,9 +1,9 @@
 import React from 'react'
-import Item from "./Item"
+import Item from "@/components/Item"
 import { useEffect, useState, useRef } from "react"
-import { useItems } from "../hooks/items"
-import { Loader } from "./Loader"
-import { scrollToTop } from "../utils/window"
+import { useItems } from "@/hooks/items"
+import { Loader } from "@/components/Loader"
+import { scrollToTop } from "@/utils/window"
 
 
 function ItemsList({ idUser }) {
@@ -49,7 +49,7 @@ function ItemsList({ idUser }) {
     }
 
     return (<>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm: gap-4 justify-center">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 sm: gap-4 mx-auto">
             {itemsList}
         </div>
         {loading ? <><Loader> Chargement...</Loader></> : ""}

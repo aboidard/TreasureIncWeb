@@ -4,7 +4,7 @@ function Item({ itemInfo }) {
 
     return (
         <div className="bg-black text-white rounded-xl p-8 flex flex-col items-center w-56">
-            <p className={"text-" + rarityColor + "-700"}>{itemInfo.name}</p>
+            <p className={"text-" + rarityColor}>{itemInfo.name}</p>
             <img className="pixelImage" width="100" height="100" src={"/assets/" + itemInfo.graphics + ".png"} alt="logo" />
         </div>
     )
@@ -16,19 +16,19 @@ function getRarityColor(rarity) {
     let rarityColor;
     switch (rarity) {
         case 'Uncommon':
-            rarityColor = "green"
+            rarityColor = "green-700"
             break
         case 'Rare':
-            rarityColor = "blue"
+            rarityColor = "blue-700"
             break
         case 'Epic':
-            rarityColor = "purple"
+            rarityColor = "purple-700"
             break
         case 'Legendary':
-            rarityColor = "orange"
+            rarityColor = "red-700"
             break
         default:
-            rarityColor = "white"
+            rarityColor = "white-700"
     }
     return rarityColor
 }

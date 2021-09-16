@@ -10,7 +10,7 @@ module.exports = {
       'text-green-700',
       'text-blue-700',
       'text-purple-700',
-      'text-orange-700',
+      'text-red-700',
     ],
   },
   darkMode: false, // or 'media' or 'class'

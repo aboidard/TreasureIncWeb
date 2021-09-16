@@ -4,12 +4,13 @@ import Link from 'next/link'
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 
-function Container({ children, title, className = "", light = false }) {
+function Container({ children, title = "", classNameFooter = "", light = false }) {
 
+    const pageTitle = light ? "Treasure INC" : "Treasure INC - " + title
     return (
-        <div className={"flex flex-col bg-gray-800 items-center min-h-screen py-2 " + className}>
+        <div className={"flex flex-col bg-gray-800 items-center min-h-screen py-2"}>
             <Head>
-                <title>Treasure INC{!light && " - " + title}</title>
+                <title>{pageTitle}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Nav />
@@ -20,11 +21,11 @@ function Container({ children, title, className = "", light = false }) {
                         <Link href="/"><a><img src="/Treasure_inc_logo.png" alt="logo" className="m-auto" /></a></Link>
                     </header>
                 }
-                <div className="w-full h-full">
+                <div className="w-full h-full" >
                     {children}
                 </div>
 
-                <Footer />
+                <Footer className={classNameFooter} />
             </main>
         </div>
     )

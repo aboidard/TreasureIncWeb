@@ -15,10 +15,21 @@ module.exports = {
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'kenvector': ['kenvector'],
+    },
+
     extend: {
       backgroundImage: theme => ({
         'game-intro': "url('/treasure_inc_background.png')",
-      })
+      }),
+      inset: {
+        '26': '6.5',
+      },
+      fontSize: {
+        '3xs': '.6rem',
+        '2xs': '.65rem',
+      },
     }
   },
   variants: {

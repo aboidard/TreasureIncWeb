@@ -47,8 +47,8 @@ export default function Home() {
 
       <div className="mt-10 bg-gradient-to-b from-gray-800 to-gray-400 bg-gray-400 text-white text-center items-center">
 
-        <p className="text-4xl">Manage an excavation company</p>
-        <p className="mb-5">You are the boss, you decide. gather a team and find the rarest treasures</p>
+        <p className="text-4xl">Manage a dungeon crawler company</p>
+        <p className="mb-5">You are the boss, comfortably and securely seated in your office. gather a team and find the rarest treasures</p>
 
         <hr className="w-6/12 m-auto" />
 

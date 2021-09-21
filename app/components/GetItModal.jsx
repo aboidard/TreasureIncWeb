@@ -15,15 +15,17 @@ function GetItModal({ toggleModal }) {
                 {/* body */}
                 <button onClick={toggleModal} className="right-1 top-1 absolute">
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="https://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
                 </button>
                 <div className="p-5">
-                    <div >
+                    <div className="is-soon">
                         <Image src={playstore} layout="responsive" alt="Play store" />
+                        <p id="soon" className="absolute text-7xl z-10 text-red-600 rotate-12 left-14 top-9">soon</p>
                     </div>
-                    <div className="mt-5">
+                    <div className="mt-5 is-soon">
                         <Image src={appstore} layout="responsive" alt="App store" />
+                        <p id="soon" className="absolute text-7xl z-10 text-red-600 rotate-12 left-14 top-32">soon</p>
                     </div>
                 </div>
             </div>

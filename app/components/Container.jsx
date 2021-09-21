@@ -8,11 +8,13 @@ function Container({ children, title = "", classNameFooter = "", light = false }
 
     const pageTitle = light ? "Treasure INC" : "Treasure INC - " + title
     return (
-        <div className={"flex flex-col bg-gray-800 items-center min-h-screen py-2"}>
+        <div className={"flex flex-col bg-gray-800 items-center min-h-screen py-2 font-kenvector "}>
             <Head>
                 <title>{pageTitle}</title>
                 <link rel="icon" href="/favicon.ico" />
+                <link href="/fonts/kenvector_future_thin.ttf" rel="preload" as="font" crossOrigin="" />
             </Head>
+
             <Nav />
 
             <main className="w-full">

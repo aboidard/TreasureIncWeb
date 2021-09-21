@@ -10,3 +10,24 @@
 .has-tooltip:hover .tooltip {
   @apply visible z-50;
 }
+
+#support {
+   @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+}
+
+#soon {
+  @apply invisible;
+}
+
+.is-soon:hover > #soon {
+  @apply visible z-50;
+}
+
+@font-face {
+  font-family: "kenvector";
+  src: url("/fonts/kenvector_future_thin.ttf");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  font-size: small;
+}

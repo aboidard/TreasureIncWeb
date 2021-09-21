@@ -10,7 +10,7 @@ export default function Nav() {
                 <Link href="/chest">
                     <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Chest</a>
                 </Link>
-                <Link href="/blog">
+                <Link href="/blogStatic">
                     <a className="p-1 text-gray-900 sm:p-4 dark:text-gray-100">Blog</a>
                 </Link>
                 <Link href="/support">

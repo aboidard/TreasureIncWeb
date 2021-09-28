@@ -1,16 +1,16 @@
 import Container from '@/components/Container'
-import { getAllFiles } from '@/utils/files';
+// //import { getAllFiles } from '@/utils/files';
 
-export default function BlogPage({ posts }) {
+export default function BlogPage() {
     return (
         <Container title="Blog">
-            <p>{posts}</p>
+            <p></p>
         </Container>
     )
 }
 
-export async function getStaticProps() {
-    const posts = await getAllFiles('blog');
+// export async function getStaticProps() {
+//     const posts = await getAllFiles('blog');
 
-    return { props: { posts } };
-}
+//     return { props: { posts } };
+// }

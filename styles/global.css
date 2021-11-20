@@ -23,6 +23,10 @@
   @apply visible z-50;
 }
 
+.readableFont {
+   font-family: "Bitstream Vera Serif Bold", serif;
+}
+
 @font-face {
   font-family: "kenvector";
   src: url("/fonts/kenvector_future_thin.ttf");
@@ -31,3 +35,4 @@
   font-display: swap;
   font-size: small;
 }
+

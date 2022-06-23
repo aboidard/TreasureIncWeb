@@ -1,6 +1,6 @@
 import React from 'react'
-import AwesomeDebouncePromise from "awesome-debounce-promise";
-import useConstant from "use-constant";
+import AwesomeDebouncePromise from 'awesome-debounce-promise'
+import useConstant from 'use-constant'
 
 export default function SearchUser({ setIdUser }) {
 

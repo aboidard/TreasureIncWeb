@@ -1,6 +1,6 @@
-import SearchUser from "@/components/SearchUser"
-import ItemsList from "@/components/ItemsList"
-import { useState } from "react";
+import SearchUser from '@/components/SearchUser'
+import ItemsList from '@/components/ItemsList'
+import { useState } from 'react'
 
 function Chest() {
     const [idUser, setIdUser] = useState("")

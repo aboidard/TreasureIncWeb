@@ -1,9 +1,9 @@
 import React from 'react'
-import Item from "@/components/Item"
-import { useEffect, useState, useRef } from "react"
-import { useItems } from "@/hooks/items"
-import { Loader } from "@/components/Loader"
-import { scrollToTop } from "@/utils/window"
+import Item from '@/components/Item'
+import { useEffect, useState, useRef } from 'react'
+import { useItems } from '@/hooks/items'
+import { Loader } from '@/components/Loader'
+import { scrollToTop } from '@/utils/window'
 
 
 function ItemsList({ idUser }) {

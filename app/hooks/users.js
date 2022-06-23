@@ -1,6 +1,6 @@
-import { useReducer } from "react";
+import { useReducer } from 'react'
 import { apiFetch } from '@/utils/api'
-import { format } from "@/utils/string";
+import { format } from '@/utils/string'
 
 const FETCHING_USERS = "FETCHING_USERS"
 const SET_USERS = "SET_USERS"

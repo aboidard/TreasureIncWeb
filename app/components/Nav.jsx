@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from 'next/link'
 import Image from 'next/image'
 import discord from '@/public/thirdParty/Discord-Logo-White.png'
 

@@ -1,7 +1,7 @@
-import { useRef, useState } from "react"
-import { useUsers } from "@/hooks/users"
-import ListUsers from "./ListUsers"
-import EditUser from "./EditUser"
+import { useRef, useState } from 'react'
+import { useUsers } from '@/hooks/users'
+import ListUsers from './ListUsers'
+import EditUser from './EditUser'
 
 function Admin() {
     const LIST_USERS = 0

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 import useConstant from 'use-constant'
+
 
 
 export default function SearchUser({ setIdUser, defaultId }) {
@@ -10,17 +11,14 @@ export default function SearchUser({ setIdUser, defaultId }) {
     );
 
     useEffect(() => {
-        console.log("use effect load screen")
-        console.log(defaultId)
-
         if (defaultId) {
             debouncedFunction(defaultId)
         }
-    }, [])
+    }, [defaultId])
 
 
     return (
-        <div className='has-tooltip mx-auto flex'>
+        <div className="has-tooltip mx-auto flex">
             <div className="relative mb-4 text-gray-600 focus-within:text-gray-400 space-x-4 mx-auto">
                 <span className="absolute inset-y-0 left-0 flex items-center pl-2">
                     <button className="p-4 focus:outline-none focus:shadow-outline">
@@ -31,7 +29,7 @@ export default function SearchUser({ setIdUser, defaultId }) {
                 </span>
                 <span className='tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-7 text-sm'>demo ID : 12345678900</span>
                 <input type="search" id="searchUser" name="q" onChange={e => debouncedFunction(e.target.value)}
-                    className="py-2 text-md text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+                    className="py-2 text-md text-white bg-gray-900 rounded-md pl-12 focus:outline-none text-sm focus:bg-white focus:text-gray-900"
                     placeholder="Enter your player's ID"
                     autoComplete="off" />
             </div>

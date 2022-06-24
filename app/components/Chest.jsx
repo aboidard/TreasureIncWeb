@@ -1,6 +1,7 @@
 import SearchUser from '@/components/SearchUser'
 import ItemsList from '@/components/ItemsList'
 import { useState } from 'react'
+import { useRouter } from 'next/router'
 
 
 function Chest() {

@@ -2,11 +2,22 @@ import React from 'react'
 import AwesomeDebouncePromise from 'awesome-debounce-promise'
 import useConstant from 'use-constant'
 
-export default function SearchUser({ setIdUser }) {
+
+export default function SearchUser({ setIdUser, defaultId }) {
 
     const debouncedFunction = useConstant(() =>
         AwesomeDebouncePromise(setIdUser, 1000)
     );
+
+    useEffect(() => {
+        console.log("use effect load screen")
+        console.log(defaultId)
+
+        if (defaultId) {
+            debouncedFunction(defaultId)
+        }
+    }, [])
+
 
     return (
         <div className='has-tooltip mx-auto flex'>
@@ -19,7 +30,10 @@ export default function SearchUser({ setIdUser }) {
                     </button>
                 </span>
                 <span className='tooltip rounded shadow-lg p-1 bg-gray-100 text-red-500 -mt-7 text-sm'>demo ID : 12345678900</span>
-                <input type="search" name="q" onChange={e => debouncedFunction(e.target.value)} className="py-2 text-md text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900" placeholder="Enter your player's ID" autoComplete="off" />
+                <input type="search" id="searchUser" name="q" onChange={e => debouncedFunction(e.target.value)}
+                    className="py-2 text-md text-white bg-gray-900 rounded-md pl-10 focus:outline-none focus:bg-white focus:text-gray-900"
+                    placeholder="Enter your player's ID"
+                    autoComplete="off" />
             </div>
         </div>
     )

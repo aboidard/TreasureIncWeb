@@ -18,7 +18,6 @@ import USK_6 from '@/public/classifications/USK_6.png'
 import GetItModal from '@/components/GetItModal'
 import Classifications from '@/app/components/Classifications'
 
-
 export default function Home() {
 
   const slides = [screenShot1, screenShot2, screenShot3, screenShot4]

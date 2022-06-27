@@ -1,13 +1,13 @@
-import { join } from 'path';
-import { readFileSync, readdirSync } from 'fs';
-import matter from 'gray-matter';
+import { join } from 'path'
+import { readFileSync, readdirSync } from 'fs'
+import matter from 'gray-matter'
 
 export async function getFiles(type) {
-    return readdirSync(join(process.cwd(), 'data', type));
+    return readdirSync(join(process.cwd(), 'data', type))
 }
 
 export async function getAllFiles(type) {
-    const files = readdirSync(join(process.cwd(), 'data', type));
+    const files = readdirSync(join(process.cwd(), 'data', type))
 
     return files.reduce((allPosts, postName) => {
         const source = readFileSync(

@@ -1,7 +1,7 @@
 
-import Container from "@/components/Container"
-import GetItButton from "@/components/GetItButton"
-import Carousel from "@/components/Carousel"
+import Container from '@/components/Container'
+import GetItButton from '@/components/GetItButton'
+import Carousel from '@/components/Carousel'
 import { useToggle } from '@/hooks/toggle'
 import screenShot1 from '@/public/screenshots/treasure_inc_screen_1.png'
 import screenShot2 from '@/public/screenshots/treasure_inc_screen_2.png'
@@ -15,9 +15,8 @@ import GOOGLE_3 from '@/public/classifications/GOOGLE_3.png'
 import GRAC_AGE_ALL from '@/public/classifications/GRAC_AGE_ALL.png'
 import PEGI_3 from '@/public/classifications/PEGI_3.png'
 import USK_6 from '@/public/classifications/USK_6.png'
-import GetItModal from "@/components/GetItModal"
-import Classifications from "@/app/components/Classifications"
-
+import GetItModal from '@/components/GetItModal'
+import Classifications from '@/app/components/Classifications'
 
 export default function Home() {
 

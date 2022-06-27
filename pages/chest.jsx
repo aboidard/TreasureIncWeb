@@ -8,19 +8,20 @@ export default function ChestPage({ infos }) {
         Welcome to Treasure INC - chest !
       </p>
       <Chest />
-      <div className="text-center"> server version : {infos.version}</div>
+      <div className="text-center"> server version : {process.env.NEXT_PUBLIC_SERVER_VERION}</div>
     </Container>
   )
 }
 
-export async function getStaticProps(context) {
+// export async function getStaticProps(context) {
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_CHEST_HOST_URL}/${process.env.NEXT_PUBLIC_CHEST_ENDPOINT_INFOS}`)
-  const infos = await res.json()
+//   //const res = await fetch(`${process.env.NEXT_PUBLIC_CHEST_HOST_URL}/${process.env.NEXT_PUBLIC_CHEST_ENDPOINT_INFOS}`)
+//   //const infos = await res.json()
+//   const version = process.env.NEXT_PUBLIC_SERVER_VERION
 
-  return {
-    props: {
-      infos,
-    },
-  }
-}
+//   return {
+//     props: {
+//       version,
+//     },
+//   }
+// }

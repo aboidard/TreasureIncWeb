@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 
 import playstore from '@/public/Download_Play_Store.png'
@@ -20,8 +21,11 @@ function GetItModal({ toggleModal }) {
                 </button>
                 <div className="p-5">
                     <div className="is-soon">
-                        <Image src={playstore} layout="responsive" alt="Play store" />
-                        <p id="soon" className="absolute text-7xl z-10 text-red-600 rotate-12 left-14 top-9">soon</p>
+                        <Link href="https://play.google.com/store/apps/details?id=com.bogomips.treasureInc" >
+                            <a target="_blank">
+                                <Image src={playstore} layout="responsive" alt="Play store" />
+                            </a>
+                        </Link>
                     </div>
                     <div className="mt-5 is-soon">
                         <Image src={appstore} layout="responsive" alt="App store" />

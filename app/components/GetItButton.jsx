@@ -9,7 +9,7 @@ export default function GetItButton({ className = "", toggleModal }) {
             <Image className="m-6 p-7"
                 src={logo} alt="TINC logo" width={50} height={50}
             />
-            <p className="text-gray-300 text-2xl"> Get it <b>Soon</b></p>
+            <p className="text-gray-300 text-2xl ml-9"> Get it</p>
         </div>
     )
 }

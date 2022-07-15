@@ -1,7 +1,7 @@
 # Dependencies
 FROM node:16-alpine AS deps
 
-RUN apk add --no-cache libc6-compat
+#RUN apk add --no-cache libc6-compat
 WORKDIR /app
 COPY package.json yarn.lock ./
 RUN yarn install --frozen-lockfile
@@ -39,5 +39,4 @@ USER nextjs
 
 EXPOSE 3000
 ENV PORT 3000
-#CMD yarn run start
 CMD ["node", "server.js"]

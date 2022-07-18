@@ -7,6 +7,7 @@ import screenShot1 from '@/public/screenshots/treasure_inc_screen_1.png'
 import screenShot2 from '@/public/screenshots/treasure_inc_screen_2.png'
 import screenShot3 from '@/public/screenshots/treasure_inc_screen_3.png'
 import screenShot4 from '@/public/screenshots/treasure_inc_screen_4.png'
+import screenShot5 from '@/public/screenshots/treasure_inc_screen_5.png'
 import ACB_G from '@/public/classifications/ACB_G.png'
 import CLASS_IND_L from '@/public/classifications/CLASS_IND_L.png'
 import ESRB_EVERYONE from '@/public/classifications/ESRB_EVERYONE.png'
@@ -20,7 +21,7 @@ import Classifications from '@/app/components/Classifications'
 
 export default function Home() {
 
-  const slides = [screenShot1, screenShot2, screenShot3, screenShot4]
+  const slides = [screenShot1, screenShot2, screenShot3, screenShot4, screenShot5]
   const classifications = [
     { image: ACB_G, url: "https://www.classification.gov.au/" },
     { image: CLASS_IND_L, url: "https://www.gov.br/mj/pt-br/assuntos/seus-direitos/classificacao-1" },

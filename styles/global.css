@@ -1,6 +1,6 @@
 .pixelImage {
-    image-rendering: crisp-edges;
-    image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  image-rendering: pixelated;
 }
 
 .tooltip {
@@ -12,7 +12,7 @@
 }
 
 #support {
-   @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
+  @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600
 }
 
 #soon {
@@ -24,7 +24,7 @@
 }
 
 .readableFont {
-   font-family: "Bitstream Vera Serif Bold", serif;
+  font-family: "Bitstream Vera Serif Bold", serif;
 }
 
 @font-face {
@@ -35,4 +35,3 @@
   font-display: swap;
   font-size: small;
 }
-

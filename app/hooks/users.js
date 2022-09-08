@@ -1,6 +1,8 @@
 import { useReducer } from 'react'
 import { apiFetch } from '@/utils/api'
 import { format } from '@/utils/string'
+import getConfig from 'next/config'
+const { publicRuntimeConfig: config } = getConfig()
 
 const FETCHING_USERS = "FETCHING_USERS"
 const SET_USERS = "SET_USERS"
@@ -47,7 +49,7 @@ export function useUsers() {
         loading: state.loading,
         fetchUsers: async ({ limit }) => {
             dispatch({ type: FETCHING_USERS })
-            const usersResponse = await apiFetch(process.env.NEXT_PUBLIC_CHEST_ENDPOINT_USERS, {
+            const usersResponse = await apiFetch(config.chestEndpointUsers, {
                 method: 'GET',
                 limit: limit,
                 page: state.page,

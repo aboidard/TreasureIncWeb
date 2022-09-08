@@ -13,4 +13,11 @@ module.exports = {
             },
         ]
     },
+    publicRuntimeConfig: {
+        serverVersion: process.env.SERVER_VERSION,
+        chestHostUrl: process.env.CHEST_HOST_URL,
+        chestEndpointInfos: process.env.CHEST_ENDPOINT_INFOS,
+        chestEndpointItems: process.env.CHEST_ENDPOINT_ITEMS,
+        chestEndpointUsers: process.env.CHEST_ENDPOINT_USERS,
+    }
 }

@@ -1,6 +1,10 @@
 import { useReducer } from 'react'
 import { apiFetch } from '@/utils/api'
 import { format } from '@/utils/string'
+import getConfig from 'next/config'
+
+const { publicRuntimeConfig: config } = getConfig()
+
 
 const FETCHING_ITEMS = "FETCHING_ITEMS"
 const SET_ITEMS = "SET_ITEMS"
@@ -61,7 +65,7 @@ export function useItems() {
 
             if (!state.limitReach && idToFetch != "") {
                 dispatch({ type: FETCHING_ITEMS })
-                const itemsResponse = await apiFetch(format(process.env.NEXT_PUBLIC_CHEST_ENDPOINT_ITEMS, idToFetch), {
+                const itemsResponse = await apiFetch(format(config.chestEndpointItems, idToFetch), {
                     method: 'GET',
                     limit: limit,
                     page: state.page,

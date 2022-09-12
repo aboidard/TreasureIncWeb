@@ -8,7 +8,7 @@ export default function AdminPage({ infos }) {
   return (
     <Container title="Admin">
       <Admin />
-      <div className="text-center"> server version : {config.serverVersion}</div>
+      <div className="text-center"> server version : 0.0.3</div>
     </Container>
   )
 }

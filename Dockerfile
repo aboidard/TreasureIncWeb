@@ -40,7 +40,7 @@ COPY .env.production .
 # Execute script
 RUN apk add --no-cache --upgrade bash
 RUN ["chmod", "+x", "./entrypoint.sh"]
-ENTRYPOINT ["./entrypoint.sh"]
+#ENTRYPOINT ["./entrypoint.sh"]
 
 USER nextjs
 

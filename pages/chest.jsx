@@ -11,7 +11,7 @@ export default function ChestPage({ infos }) {
         Welcome to Treasure INC - chest !
       </p>
       <Chest />
-      <div className="text-center"> server version : {config.serverVersion}</div>
+      <div className="text-center"> server version : 0.0.3</div>
     </Container>
   )
 }

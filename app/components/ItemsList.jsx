@@ -17,13 +17,7 @@ function ItemsList({ idUser }) {
     const handleScroll = (e) => {
         let scrollTop = document.documentElement.scrollTop
         const bottom = document.documentElement.scrollHeight - scrollTop <= document.documentElement.clientHeight + 1;
-        console.log("calc :");
-        console.log("scrollTop", scrollTop);
-        console.log("scrollHeight", document.documentElement.scrollHeight);
-        console.log("scrollHeight - scrollTop", document.documentElement.scrollHeight - scrollTop);
-        console.log("clientHeight", document.documentElement.clientHeight);
-        console.log("bottom", bottom);
-        console.log("------");
+
         // appel à la page suivante de l'api une fois arrivé en bas de l'écran
         if (bottom && !loadingRef.current && !limitReachRef.current) {
             fetchItemsRef.current({ limit: 12 })

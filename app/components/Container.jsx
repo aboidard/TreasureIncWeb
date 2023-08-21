@@ -20,7 +20,7 @@ function Container({ children, title = "", classNameFooter = "", light = false }
             <main className="w-full">
                 {!light &&
                     <header >
-                        <Link href="/"><a><img src="/Treasure_inc_logo.png" alt="logo" className="m-auto" /></a></Link>
+                        <Link href="/"><img src="/Treasure_inc_logo.png" alt="logo" className="m-auto" /></Link>
                     </header>
                 }
                 <div className="w-full h-full" >
@@ -30,7 +30,7 @@ function Container({ children, title = "", classNameFooter = "", light = false }
                 <Footer className={classNameFooter} />
             </main>
         </div>
-    )
+    );
 }
 
 export default Container

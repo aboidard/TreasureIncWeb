@@ -6,7 +6,7 @@ import playstore from '@/public/Download_Play_Store.png'
 import appstore from '@/public/Download_App_Store.svg'
 
 function GetItModal({ toggleModal }) {
-    return (<>
+    return <>
         <button onClick={toggleModal}>
             <div className="fixed bg-black opacity-80 inset-0 z-0"></div>
         </button>
@@ -21,10 +21,12 @@ function GetItModal({ toggleModal }) {
                 </button>
                 <div className="p-5">
                     <div className="is-soon">
-                        <Link href="https://play.google.com/store/apps/details?id=com.bogomips.treasureInc" >
-                            <a target="_blank">
-                                <Image src={playstore} layout="responsive" alt="Play store" />
-                            </a>
+                        <Link
+                            href="https://play.google.com/store/apps/details?id=com.bogomips.treasureInc"
+                            target="_blank">
+
+                            <Image src={playstore} layout="responsive" alt="Play store" />
+
                         </Link>
                     </div>
                     <div className="mt-5 is-soon">
@@ -34,8 +36,7 @@ function GetItModal({ toggleModal }) {
                 </div>
             </div>
         </div>
-    </>
-    )
+    </>;
 }
 
 export default GetItModal

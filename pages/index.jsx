@@ -40,7 +40,7 @@ export default function Home() {
 
       <div className="flex w-full justify-center py-4 bg-game-intro bg-top bg-no-repeat h-[45rem]">
 
-        <GetItButton className="p-2 mt-[375px]" toggleModal={toggleModal} />
+        <GetItButton className="mt-[380px]" toggleModal={toggleModal} />
 
       </div>
 

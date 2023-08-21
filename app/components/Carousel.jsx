@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useEffect } from 'react'
 import Image from 'next/image'
-import { useEmblaCarousel } from 'embla-carousel/react'
+import useEmblaCarousel from 'embla-carousel-react'
 import { PrevButton, NextButton } from '@/components/CarouselButton'
 
 const Carousel = ({ slides }) => {

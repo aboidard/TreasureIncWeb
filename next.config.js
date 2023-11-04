@@ -1,4 +1,5 @@
 module.exports = {
+    crossOrigin: 'anonymous',
     experimental: {
         outputStandalone: true
     },

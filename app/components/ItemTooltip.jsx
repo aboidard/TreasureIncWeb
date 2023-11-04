@@ -3,7 +3,6 @@ import { getRarityColor, getFontSize } from '@/utils/items'
 
 function ItemTooltip({ itemInfo, posX, posY }) {
     let rarityColor = getRarityColor(itemInfo.rarity)
-    let fontSize = getFontSize(itemInfo.name.length);
     return (
         <div className={`block rounded-lg bg-white dark:bg-neutral-700 w-1/4 absolute`}
             style={{ top: `${posY - 70}px`, left: `${posX + 10}px` }}>

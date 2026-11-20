@@ -1,27 +1,12 @@
 import Admin from '@/app/components/Admin/Admin'
 import Container from '@/components/Container'
-import getConfig from 'next/config'
 
-const { publicRuntimeConfig: config } = getConfig()
-
-export default function AdminPage({ infos }) {
+// Protected by Basic Authentication in middleware.js
+export default function AdminPage() {
   return (
     <Container title="Admin">
+      <h1 className="font-kenvector text-3xl text-center text-white mt-4">Administration</h1>
       <Admin />
-      <div className="text-center"> server version : 0.0.3</div>
     </Container>
   )
 }
-
-// export async function getStaticProps(context) {
-
-//   //const res = await fetch(`${process.env.NEXT_PUBLIC_CHEST_HOST_URL}/${process.env.NEXT_PUBLIC_CHEST_ENDPOINT_INFOS}`)
-//   //const infos = await res.json()
-//   const version = process.env.NEXT_PUBLIC_SERVER_VERSION
-
-//   return {
-//     props: {
-//       version,
-//     },
-//   }
-// }
